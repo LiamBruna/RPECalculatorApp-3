@@ -1,15 +1,23 @@
 {
-    "short_name": "RPECalculatorApp",
-    "name": "RPE Calculator App",
-    "icons": [
-      {
-        "src": "./icon.png",
-        "sizes": "64x64 32x32 24x24 16x16",
-        "type": "image/x-icon"
-      }
-    ],
-    "start_url": "./",
-    "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#ffffff"
-  }
+  "short_name": "RPECalculatorApp",
+  "name": "RPE Calculator App",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "sizes": "640x640",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "./",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "screenshots": [
+    {
+      "src": "./screenshot.png",
+      "sizes": "800x444",
+      "type": "image/png"
+    }
+  ]
+}
