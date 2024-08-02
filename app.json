@@ -1,5 +1,8 @@
 {
   "expo": {
+    "experiments": {
+      "baseUrl": "/RPECalculatorApp"
+    },
     "name": "RPECalculatorApp",
     "slug": "RPECalculatorApp",
     "version": "1.0.0",
@@ -21,7 +24,7 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     }
   }
 }
