@@ -24,7 +24,7 @@
       }
     </style>
   <link rel="shortcut icon" href="/RPECalculatorApp/favicon.ico" /></head>
-  <link rel="manifest" href="./manifest.json">
+  <link rel="manifest" href="/manifest.json">
   <body>
     <!-- Use static rendering with Expo Router to support running without JavaScript. -->
     <noscript>
@@ -36,7 +36,7 @@
   <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-      navigator.serviceWorker.register('./sw.js').then(function(registration) {
+      navigator.serviceWorker.register('/sw.js').then(function(registration) {
         console.log('ServiceWorker registration successful with scope: ', registration.scope);
       }, function(err) {
         console.log('ServiceWorker registration failed: ', err);
