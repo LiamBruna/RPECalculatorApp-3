@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, Button, TextInput, StyleSheet } from 'react-native';
+import { Text, View, Button, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function Timer({ setShowComponent }) {
   const [minutes, setMinutes] = useState('00');
@@ -60,14 +60,15 @@ export default function Timer({ setShowComponent }) {
         placeholder="Segundos"
         onFocus={handleFocus(setSeconds)}
       />
-      <View style={styles.card}>
+      <View style={[styles.card, styles.textcard]}>
         <Button title={isActive ? 'Pause' : 'Start'} onPress={toggle} color="#2c2a2a"/>
       </View>
       <View style={styles.card}>
         <Button title="Reset" onPress={reset} color="#2c2a2a"/>
       </View>
-      <View style={styles.card}>
+      <View style={styles.card} >
         <Button title="Volver al inicio" onPress={() => setShowComponent('')} color="#2c2a2a"/>
+        <Text style={styles.text}>Volver al inicio</Text>
       </View>
     </View>
   );
@@ -96,12 +97,19 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold'
   },
+  textcard: {
+    fontSize: 50,
+    padding: 5,
+    marginBottom: 10,
+    color: 'black',
+    fontWeight: 'bold'
+  },
   card: {
     height: '11%',
     width: '60%',
     borderWidth: 3,
     borderRadius: 8,
-    padding: 15,
+    padding: 10,
     marginBottom: 20,
     backgroundColor: '#2c2a2a',
     fontWeight: 'bold'
