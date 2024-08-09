@@ -17,7 +17,7 @@ export default function App() {
       )}
       {showComponent === '' && (
         <View style={styles.card}>
-          <Button title="Cronómetro" onPress={() => setShowComponent('Timer')} color="#2c2a2a" />
+          <Button title="Temporizador" onPress={() => setShowComponent('Timer')} color="#2c2a2a" />
         </View>
       )}
     </View>

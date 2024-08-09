@@ -47,7 +47,7 @@ export default function RPECalculator({ setShowComponent }) {
         <Text style={styles.subtitle}>PESO</Text>
         {weightWant !== '' && <Text style={styles.backoff}>{weightWant}</Text>}
       </View>
-      <View style={styles.card}>
+      <View style={styles.cardbtn}>
         <Button title="Volver al inicio" onPress={() => setShowComponent('')} color="#2c2a2a" />
       </View>
     </View>
@@ -96,6 +96,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#361111'
   },
   card: {
+    width: '110%',
+    borderWidth: 3,
+    borderRadius: 10,
+    padding: 20,
+    marginBottom: 6,
+    backgroundColor: '#2c2a2a'
+  },
+  cardbtn: {
     width: '80%',
     borderWidth: 3,
     borderRadius: 10,

@@ -8,14 +8,18 @@ export default function Timer({ setShowComponent }) {
   const [countdown, setCountdown] = useState(0);
 
   function toggle() {
+    if (!isActive) {
+      if (countdown === 0) {
+        setCountdown(parseInt(minutes) * 60 + parseInt(seconds));
+      }
+    }
     setIsActive(!isActive);
-    setCountdown(parseInt(minutes) * 60 + parseInt(seconds));
   }
 
   function reset() {
     setMinutes('00');
     setSeconds('00');
-    setCountdown(0)
+    setCountdown(0);
     setIsActive(false);
   }
 
@@ -31,11 +35,31 @@ export default function Timer({ setShowComponent }) {
     return () => clearInterval(interval);
   }, [isActive, countdown]);
 
+  function handleFocus(setValue) {
+    return () => {
+      setValue(value => value.replace(/^0+/, ''));
+    };
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{Math.floor(countdown / 60)}m {countdown % 60}s</Text>
-      <TextInput style={styles.input} value={minutes} onChangeText={setMinutes} keyboardType="numeric" placeholder="Minutos"/>
-      <TextInput style={styles.input} value={seconds} onChangeText={setSeconds} keyboardType="numeric" placeholder="Segundos"/>
+      <TextInput
+        style={styles.input}
+        value={minutes}
+        onChangeText={setMinutes}
+        keyboardType="numeric"
+        placeholder="Minutos"
+        onFocus={handleFocus(setMinutes)}
+      />
+      <TextInput
+        style={styles.input}
+        value={seconds}
+        onChangeText={setSeconds}
+        keyboardType="numeric"
+        placeholder="Segundos"
+        onFocus={handleFocus(setSeconds)}
+      />
       <View style={styles.card}>
         <Button title={isActive ? 'Pause' : 'Start'} onPress={toggle} color="#2c2a2a"/>
       </View>
@@ -57,7 +81,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#361111'
   },
   input: {
-    fontSize: 40,
+    fontSize: 25,
     borderWidth: 3,
     borderRadius: 5,
     padding: 5,
@@ -73,7 +97,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   card: {
-    height: '8%',
+    height: '11%',
     width: '60%',
     borderWidth: 3,
     borderRadius: 8,
