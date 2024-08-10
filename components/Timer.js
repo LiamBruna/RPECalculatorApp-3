@@ -66,9 +66,8 @@ export default function Timer({ setShowComponent }) {
       <View style={styles.card}>
         <Button title="Reset" onPress={reset} color="#2c2a2a"/>
       </View>
-      <View style={styles.card} >
+      <View style={styles.cardvolver} >
         <Button title="Volver al inicio" onPress={() => setShowComponent('')} color="#2c2a2a"/>
-        <Text style={styles.text}>Volver al inicio</Text>
       </View>
     </View>
   );
@@ -88,7 +87,8 @@ const styles = StyleSheet.create({
     padding: 5,
     marginBottom: 10,
     color: 'white',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    width: '80%'
   },
   text: {
     fontSize: 50,
@@ -97,15 +97,18 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold'
   },
-  textcard: {
-    fontSize: 50,
-    padding: 5,
-    marginBottom: 10,
-    color: 'black',
+  card: {
+    height: '8%',
+    width: '60%',
+    borderWidth: 3,
+    borderRadius: 8,
+    padding: 10,
+    marginBottom: 20,
+    backgroundColor: '#2c2a2a',
     fontWeight: 'bold'
   },
-  card: {
-    height: '11%',
+  cardvolver: {
+    height: '8.5%',
     width: '60%',
     borderWidth: 3,
     borderRadius: 8,
